@@ -11,7 +11,6 @@ local wibox = require('wibox')
 -- Theme handling library
 local beautiful = require('beautiful')
 -- Notification library
-local naughty = require('naughty')
 local menubar = require('menubar')
 local hotkeys_popup = require('awful.hotkeys_popup')
 -- Enable hotkeys help widget for VIM and other apps
@@ -22,51 +21,21 @@ require('awful.hotkeys_popup.keys')
 local debian = require('debian.menu')
 local has_fdo, freedesktop = pcall(require, 'freedesktop')
 
+-- Error handling
+require('core.error_handling')
+
 -- User variables
 local vars = require('core.variables')
 
--- {{{ Error handling
--- Check if awesome encountered an error during startup and fell back to
--- another config (This code will only ever execute for the fallback config)
-if awesome.startup_errors then
-    naughty.notify({
-        preset = naughty.config.presets.critical,
-        title = 'Oops, there were errors during startup!',
-        text = awesome.startup_errors,
-    })
-end
-
--- Handle runtime errors after startup
-do
-    local in_error = false
-    awesome.connect_signal('debug::error', function(err)
-        -- Make sure we don't go into an endless error loop
-        if in_error then
-            return
-        end
-        in_error = true
-
-        naughty.notify({
-            preset = naughty.config.presets.critical,
-            title = 'Oops, an error happened!',
-            text = tostring(err),
-        })
-        in_error = false
-    end)
-end
--- }}}
-
 local config_dir = vars.config_dir
+local terminal = vars.terminal
+local editor = vars.editor
+local editor_cmd = terminal .. ' -e ' .. editor
+local modkey = vars.modkey
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
 beautiful.init(config_dir .. 'theme/theme.lua')
-
-local terminal = vars.terminal
-local editor = vars.editor
-local editor_cmd = terminal .. ' -e ' .. editor
-
-local modkey = vars.modkey
 
 -- Table of layouts to cover with awful.layout.inc, order matters.
 awful.layout.layouts = {
