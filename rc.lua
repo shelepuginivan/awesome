@@ -57,13 +57,7 @@ awful.screen.connect_for_each_screen(wibar.on_connect)
 -- }}}
 
 -- {{{ Mouse bindings
-root.buttons(gears.table.join(
-    awful.button({}, 3, function()
-        menu.main:toggle()
-    end),
-    awful.button({}, 4, awful.tag.viewnext),
-    awful.button({}, 5, awful.tag.viewprev)
-))
+root.buttons(require('bindings.mouse'))
 -- }}}
 
 -- {{{ Key bindings
