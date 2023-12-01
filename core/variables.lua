@@ -15,7 +15,8 @@ return {
     editor = os.getenv('EDITOR') or 'nvim',
     terminal = 'alacritty',
 
-    -- Wallpapers
+    -- Theme
+    assets_dir = config_dir .. 'assets/',
     wallpapers_dir = config_dir .. 'wallpapers/',
     wallpapers_file = 'awesome.png',
 }
