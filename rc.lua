@@ -60,7 +60,7 @@ local config_dir = vars.config_dir
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
-beautiful.init(config_dir .. 'default/theme.lua')
+beautiful.init(config_dir .. 'theme/theme.lua')
 
 local terminal = vars.terminal
 local editor = vars.editor
