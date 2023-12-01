@@ -22,6 +22,9 @@ require("awful.hotkeys_popup.keys")
 local debian = require("debian.menu")
 local has_fdo, freedesktop = pcall(require, "freedesktop")
 
+-- User variables
+local vars = require('core.variables')
+
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
 -- another config (This code will only ever execute for the fallback config)
@@ -47,21 +50,17 @@ do
 end
 -- }}}
 
+local config_dir = vars.config_dir
+
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
-beautiful.init("~/.config/awesome/default/theme.lua")
+beautiful.init(config_dir .. "default/theme.lua")
 
--- This is used later as the default terminal and editor to run.
-terminal = "alacritty"
-editor = os.getenv("EDITOR") or "nvim"
-editor_cmd = terminal .. " -e " .. editor
+local terminal = vars.terminal
+local editor = vars.editor
+local editor_cmd = terminal .. ' -e ' .. editor
 
--- Default modkey.
--- Usually, Mod4 is the key with a logo between Control and Alt.
--- If you do not like this or do not have such a key,
--- I suggest you to remap Mod4 to another key using xmodmap or other tools.
--- However, you can use another modifier like Mod1, but it may interact with others.
-modkey = "Mod4"
+local modkey = vars.modkey
 
 -- Table of layouts to cover with awful.layout.inc, order matters.
 awful.layout.layouts = {
