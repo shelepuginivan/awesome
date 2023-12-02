@@ -13,6 +13,7 @@ local screenshot_cmd = vars.screenshot_cmd
 local screenshot_focused_cmd = vars.screenshot_focused_cmd
 local screenshot_select_cmd = vars.screenshot_select_cmd
 
+local brightness = require('utils.brightness')
 local volume = require('utils.volume')
 
 local globalkeys = gears.table.join(
@@ -131,7 +132,21 @@ local globalkeys = gears.table.join(
     -- Volume controls
     awful.key({}, 'XF86AudioLowerVolume', volume.cmd.lower, { description = 'lower audio volume', group = 'launcher' }),
     awful.key({}, 'XF86AudioRaiseVolume', volume.cmd.raise, { description = 'raise audio volume', group = 'launcher' }),
-    awful.key({}, 'XF86AudioMute', volume.cmd.toggle, { description = 'mute audio device', group = 'launcher' })
+    awful.key({}, 'XF86AudioMute', volume.cmd.toggle, { description = 'mute audio device', group = 'launcher' }),
+
+    -- Brightness controls
+    awful.key(
+        {},
+        'XF86MonBrightnessDown',
+        brightness.cmd.lower,
+        { description = 'lower display brightness', group = 'launcher' }
+    ),
+    awful.key(
+        {},
+        'XF86MonBrightnessUp',
+        brightness.cmd.raise,
+        { description = 'raise display brightness', group = 'launcher' }
+    )
 )
 
 -- Bind all key numbers to tags.
