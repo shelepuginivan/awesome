@@ -1,11 +1,8 @@
----------------------------
--- Default awesome theme --
----------------------------
-
 local theme_assets = require('beautiful.theme_assets')
 local xresources = require('beautiful.xresources')
 local dpi = xresources.apply_dpi
 
+local colorschemes = require('theme.colorschemes')
 local vars = require('core.variables')
 
 local assets_path = vars.assets_dir
@@ -14,23 +11,24 @@ local theme = {}
 
 theme.font = vars.font
 
-theme.bg_normal = '#222222'
-theme.bg_focus = '#535d6c'
-theme.bg_urgent = '#ff0000'
-theme.bg_minimize = '#444444'
+theme.bg_normal = colorschemes.gruvbox.bg0
+theme.bg_focus = colorschemes.gruvbox.bg1
+theme.bg_urgent = colorschemes.gruvbox.dark_red
+theme.bg_minimize = colorschemes.gruvbox.bg2
 theme.bg_systray = theme.bg_normal
 
-theme.fg_normal = '#aaaaaa'
-theme.fg_focus = '#ffffff'
-theme.fg_urgent = '#ffffff'
-theme.fg_minimize = '#ffffff'
+theme.fg_normal = colorschemes.gruvbox.fg1
+theme.fg_focus = colorschemes.gruvbox.fg0
+theme.fg_urgent = colorschemes.gruvbox.fg0
+theme.fg_minimize = colorschemes.gruvbox.fg0
+
+theme.border_normal = colorschemes.gruvbox.gray
+theme.border_focus = colorschemes.gruvbox.dark_gray
+theme.border_marked = colorschemes.gruvbox.dark_red
 
 theme.useless_gap = dpi(6)
 theme.gap_single_client = true
 theme.border_width = dpi(1)
-theme.border_normal = '#000000'
-theme.border_focus = '#535d6c'
-theme.border_marked = '#91231c'
 
 -- There are other variable sets
 -- overriding the default one when
