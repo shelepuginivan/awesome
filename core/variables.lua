@@ -37,4 +37,11 @@ return {
     volume_raise_cmd = 'amixer -q -D pulse sset Master 5%+',
     volume_toggle_cmd = 'amixer -D pulse set Master 1+ toggle',
     volume_get_cmd = 'bash -c "amixer -D pulse sget Master | egrep -o -m 1 \\"\\[[0-9]+%\\] \\[(on|off)\\]\\" | awk \'{gsub(/[][]/, \\"\\"); gsub(/on/, \\"󰕾\\"); gsub(/off/, \\"󰝟\\"); print \\$2 \\"  \\" \\$1}\'"',
+
+    -- Brightness control
+    brightness_lower_cmd = 'xbacklight -dec 1',
+    brightness_raise_cmd = 'xbacklight -inc 1',
+    brightness_get_cmd = 'xbacklight -get',
+    brightness_min = 1,
+    brightness_max = 10,
 }
