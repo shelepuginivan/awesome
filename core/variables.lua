@@ -1,6 +1,9 @@
 local home = os.getenv('HOME')
 local config_dir = home .. '/.config/awesome/'
 
+local screenshot_name = '%Y-%m-%d_%H-%M-%S.png'
+local screenshots_path = home .. '/Images/Screenshots'
+
 return {
     config_dir = config_dir,
 
@@ -19,4 +22,9 @@ return {
     assets_dir = config_dir .. 'assets/',
     wallpapers_dir = config_dir .. 'wallpapers/',
     wallpaper = 'awesome.png',
+
+    -- Screenshots
+    screenshot_cmd = 'scrot ' .. screenshot_name .. " -e 'mv $f " .. screenshots_path .. "'",
+    screenshot_focused_cmd = 'scrot -u ' .. screenshot_name .. " -e 'mv $f " .. screenshots_path .. "'",
+    screenshot_select_cmd = 'scrot -s ' .. screenshot_name .. " -e 'mv $f " .. screenshots_path .. "'",
 }
