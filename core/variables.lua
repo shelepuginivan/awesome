@@ -46,5 +46,5 @@ return {
     brightness_max = 10,
 
     -- Screen lock
-    screen_lock_cmd = 'betterlockscreen -l'
+    screen_lock_cmd = 'betterlockscreen -l',
 }
