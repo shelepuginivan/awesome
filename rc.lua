@@ -2,23 +2,16 @@
 -- found (e.g. lgi). If LuaRocks is not installed, do nothing.
 pcall(require, 'luarocks.loader')
 
--- Standard awesome library
 local gears = require('gears')
 local awful = require('awful')
 require('awful.autofocus')
--- Widget and layout library
 local wibox = require('wibox')
--- Theme handling library
 local beautiful = require('beautiful')
--- Notification library
 local menubar = require('menubar')
-local hotkeys_popup = require('awful.hotkeys_popup')
+
 -- Enable hotkeys help widget for VIM and other apps
 -- when client with a matching name is opened:
 require('awful.hotkeys_popup.keys')
-
--- Menu
-local menu = require('core.menu')
 
 local wallpaper = require('theme.wallpaper')
 local wibar = require('core.wibar')
@@ -31,9 +24,6 @@ local vars = require('core.variables')
 
 local config_dir = vars.config_dir
 local terminal = vars.terminal
-local editor = vars.editor
-local editor_cmd = terminal .. ' -e ' .. editor
-local modkey = vars.modkey
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
