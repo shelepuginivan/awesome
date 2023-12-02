@@ -46,8 +46,6 @@ awful.layout.layouts = require('core.layouts')
 -- }}}
 
 -- {{{ Menu
-mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon, menu = menu.main })
-
 -- Menubar configuration
 menubar.utils.terminal = terminal -- Set the terminal for applications that require it
 -- }}}
