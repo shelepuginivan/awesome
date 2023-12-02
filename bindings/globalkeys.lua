@@ -146,7 +146,12 @@ local globalkeys = gears.table.join(
         'XF86MonBrightnessUp',
         brightness.cmd.raise,
         { description = 'raise display brightness', group = 'launcher' }
-    )
+    ),
+
+    -- Screen lock
+    awful.key({}, keys.F9, function()
+        awful.spawn(vars.screen_lock_cmd)
+    end, { description = 'lock screen', group = 'launcher' })
 )
 
 -- Bind all key numbers to tags.
