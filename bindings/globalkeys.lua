@@ -4,8 +4,14 @@ local gears = require('gears')
 local menubar = require('menubar')
 
 local keys = require('bindings.keys')
-local terminal = require('core.variables').terminal
 local menu = require('core.menu')
+
+local vars = require('core.variables')
+
+local terminal = vars.terminal
+local screenshot_cmd = vars.screenshot_cmd
+local screenshot_focused_cmd = vars.screenshot_focused_cmd
+local screenshot_select_cmd = vars.screenshot_select_cmd
 
 local globalkeys = gears.table.join(
     awful.key({ keys.MODKEY }, 's', hotkeys_popup.show_help, { description = 'show help', group = 'awesome' }),
@@ -105,7 +111,20 @@ local globalkeys = gears.table.join(
     -- Menubar
     awful.key({ keys.MODKEY }, 'p', function()
         menubar.show()
-    end, { description = 'show the menubar', group = 'launcher' })
+    end, { description = 'show the menubar', group = 'launcher' }),
+
+    -- Screenshots
+    awful.key({}, keys.PRINTSCREEN, function()
+        awful.spawn.with_shell(screenshot_cmd)
+    end, { description = 'take screenshot', group = 'launcher' }),
+
+    awful.key({ keys.CTRL }, keys.PRINTSCREEN, function()
+        awful.spawn(screenshot_focused_cmd)
+    end, { description = 'take screenshot of the window', group = 'launcher' }),
+
+    awful.key({ keys.SHIFT }, keys.PRINTSCREEN, function()
+        awful.spawn.with_shell(screenshot_select_cmd)
+    end, { description = 'take screenshot of specific area', group = 'launcher' })
 )
 
 -- Bind all key numbers to tags.
