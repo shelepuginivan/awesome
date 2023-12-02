@@ -14,7 +14,7 @@ local function on_connect(s)
     wallpaper.set(s)
 
     -- Each screen has its own tag table.
-    local names = { 'term', 'www', 'office', 'media' }
+    local names = { 'term', 'www', 'media', 'social', 'utils' }
     awful.tag(names, s, awful.layout.layouts[1])
 
     -- Create a promptbox for each screen
@@ -59,6 +59,7 @@ local function on_connect(s)
         { -- Left widgets
             layout = wibox.layout.fixed.horizontal,
             s.mytaglist,
+            wibox.widget.textbox(' | '),
             s.mypromptbox,
         },
         s.mytasklist, -- Middle widget
