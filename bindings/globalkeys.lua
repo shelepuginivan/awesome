@@ -13,6 +13,8 @@ local screenshot_cmd = vars.screenshot_cmd
 local screenshot_focused_cmd = vars.screenshot_focused_cmd
 local screenshot_select_cmd = vars.screenshot_select_cmd
 
+local volume = require('utils.volume')
+
 local globalkeys = gears.table.join(
     awful.key({ keys.MODKEY }, 's', hotkeys_popup.show_help, { description = 'show help', group = 'awesome' }),
     awful.key({ keys.MODKEY }, 'Left', awful.tag.viewprev, { description = 'view previous', group = 'tag' }),
@@ -124,7 +126,12 @@ local globalkeys = gears.table.join(
 
     awful.key({ keys.SHIFT }, keys.PRINTSCREEN, function()
         awful.spawn.with_shell(screenshot_select_cmd)
-    end, { description = 'take screenshot of specific area', group = 'launcher' })
+    end, { description = 'take screenshot of specific area', group = 'launcher' }),
+
+    -- Volume controls
+    awful.key({}, 'XF86AudioLowerVolume', volume.cmd.lower, { description = 'lower audio volume', group = 'launcher' }),
+    awful.key({}, 'XF86AudioRaiseVolume', volume.cmd.raise, { description = 'raise audio volume', group = 'launcher' }),
+    awful.key({}, 'XF86AudioMute', volume.cmd.toggle, { description = 'mute audio device', group = 'launcher' })
 )
 
 -- Bind all key numbers to tags.
