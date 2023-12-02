@@ -28,9 +28,6 @@ local terminal = vars.terminal
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
 beautiful.init(config_dir .. 'theme/theme.lua')
-beautiful.useless_gap = 6
-beautiful.gap_single_client = true
-
 -- Layouts
 awful.layout.layouts = require('core.layouts')
 -- }}}
