@@ -136,4 +136,5 @@ client.connect_signal('unfocus', function(c)
 end)
 -- }}}
 
-awful.util.spawn('compton')
+-- XDG autostart implementation
+awful.spawn.with_shell(config_dir .. '/autorun.sh')
