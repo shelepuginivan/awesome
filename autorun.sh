@@ -12,3 +12,4 @@ run compton
 
 # User autostart commands
 run setxkbmap -layout "us,ru" -option "grp:alt_shift_toggle"
+run setxkbmap -option ctrl:nocaps
