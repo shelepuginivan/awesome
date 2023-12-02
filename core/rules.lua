@@ -28,7 +28,6 @@ return {
             },
             class = {
                 'Arandr',
-                'Blueman-manager',
                 'Gpick',
                 'Kruler',
                 'MessageWin', -- kalarm.
