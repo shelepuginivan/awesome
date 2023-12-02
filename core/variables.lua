@@ -23,6 +23,9 @@ return {
     wallpapers_dir = config_dir .. 'wallpapers/',
     wallpaper = 'awesome.png',
 
+    -- Battery widget command
+    battery_cmd = 'bash -c "acpi -b | awk \'{gsub(/,/, \\"\\", $4); print \\"󱐋 \\" $4}\'"',
+
     -- Screenshots
     screenshot_cmd = 'scrot ' .. screenshot_name .. " -e 'mv $f " .. screenshots_path .. "'",
     screenshot_focused_cmd = 'scrot -u ' .. screenshot_name .. " -e 'mv $f " .. screenshots_path .. "'",
