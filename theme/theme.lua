@@ -12,7 +12,7 @@ local assets_path = vars.assets_dir
 
 local theme = {}
 
-theme.font = 'sans 8'
+theme.font = vars.font
 
 theme.bg_normal = '#222222'
 theme.bg_focus = '#535d6c'
