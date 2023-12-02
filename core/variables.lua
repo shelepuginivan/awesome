@@ -31,4 +31,10 @@ return {
     screenshot_cmd = 'scrot ' .. screenshot_name .. " -e 'mv $f " .. screenshots_path .. "'",
     screenshot_focused_cmd = 'scrot -u ' .. screenshot_name .. " -e 'mv $f " .. screenshots_path .. "'",
     screenshot_select_cmd = 'scrot -s ' .. screenshot_name .. " -e 'mv $f " .. screenshots_path .. "'",
+
+    -- Volume control
+    volume_lower_cmd = 'amixer -q -D pulse sset Master 5%-',
+    volume_raise_cmd = 'amixer -q -D pulse sset Master 5%+',
+    volume_toggle_cmd = 'amixer -D pulse set Master 1+ toggle',
+    volume_get_cmd = 'bash -c "amixer -D pulse sget Master | egrep -o -m 1 \\"\\[[0-9]+%\\] \\[(on|off)\\]\\" | awk \'{gsub(/[][]/, \\"\\"); gsub(/on/, \\"󰕾\\"); gsub(/off/, \\"󰝟\\"); print \\$2 \\"  \\" \\$1}\'"',
 }
