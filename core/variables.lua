@@ -44,4 +44,7 @@ return {
     brightness_get_cmd = 'xbacklight -get',
     brightness_min = 1,
     brightness_max = 10,
+
+    -- Screen lock
+    screen_lock_cmd = 'betterlockscreen -l'
 }
