@@ -9,11 +9,9 @@ local menu = require('core.menu')
 local vars = require('core.variables')
 
 local terminal = vars.terminal
-local screenshot_cmd = vars.screenshot_cmd
-local screenshot_focused_cmd = vars.screenshot_focused_cmd
-local screenshot_select_cmd = vars.screenshot_select_cmd
 
 local brightness = require('utils.brightness')
+local screenshot = require('utils.screenshot')
 local volume = require('utils.volume')
 
 local globalkeys = gears.table.join(
@@ -117,17 +115,21 @@ local globalkeys = gears.table.join(
     end, { description = 'show the menubar', group = 'launcher' }),
 
     -- Screenshots
-    awful.key({}, keys.PRINTSCREEN, function()
-        awful.spawn.with_shell(screenshot_cmd)
-    end, { description = 'take screenshot', group = 'launcher' }),
+    awful.key({}, keys.PRINTSCREEN, screenshot.cmd.regular, { description = 'take screenshot', group = 'launcher' }),
 
-    awful.key({ keys.CTRL }, keys.PRINTSCREEN, function()
-        awful.spawn(screenshot_focused_cmd)
-    end, { description = 'take screenshot of the window', group = 'launcher' }),
+    awful.key(
+        { keys.CTRL },
+        keys.PRINTSCREEN,
+        screenshot.cmd.focused,
+        { description = 'take screenshot of the window', group = 'launcher' }
+    ),
 
-    awful.key({ keys.SHIFT }, keys.PRINTSCREEN, function()
-        awful.spawn.with_shell(screenshot_select_cmd)
-    end, { description = 'take screenshot of specific area', group = 'launcher' }),
+    awful.key(
+        { keys.SHIFT },
+        keys.PRINTSCREEN,
+        screenshot.cmd.select,
+        { description = 'take screenshot of specific area', group = 'launcher' }
+    ),
 
     -- Volume controls
     awful.key({}, 'XF86AudioLowerVolume', volume.cmd.lower, { description = 'lower audio volume', group = 'launcher' }),
