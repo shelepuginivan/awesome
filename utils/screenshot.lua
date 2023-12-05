@@ -1,17 +1,29 @@
 local awful = require('awful')
+local naughty = require('naughty')
 
 local vars = require('core.variables')
 
+local function notify(_, _, _, exit_code)
+    if exit_code ~= 0 then
+        return
+    end
+
+    naughty.notify({
+        title = 'Screenshot',
+        text = vars.screenshot_notify_text,
+    })
+end
+
 local function screenshot()
-    awful.spawn.with_shell(vars.screenshot_cmd)
+    awful.spawn.easy_async(vars.screenshot_cmd, notify)
 end
 
 local function screenshot_focused()
-    awful.spawn.with_shell(vars.screenshot_focused_cmd)
+    awful.spawn.easy_async(vars.screenshot_focused_cmd, notify)
 end
 
 local function screenshot_select()
-    awful.spawn.with_shell(vars.screenshot_select_cmd)
+    awful.spawn.easy_async(vars.screenshot_select_cmd, notify)
 end
 
 return {

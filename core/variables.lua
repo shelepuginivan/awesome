@@ -31,6 +31,7 @@ return {
     screenshot_cmd = 'scrot ' .. screenshot_name .. " -e 'mv $f " .. screenshots_path .. "'",
     screenshot_focused_cmd = 'scrot -u ' .. screenshot_name .. " -e 'mv $f " .. screenshots_path .. "'",
     screenshot_select_cmd = 'scrot -s ' .. screenshot_name .. " -e 'mv $f " .. screenshots_path .. "'",
+    screenshot_notify_text = 'Screenshot saved in ' .. screenshots_path,
 
     -- Volume control
     volume_lower_cmd = 'amixer -q -D pulse sset Master 5%-',
