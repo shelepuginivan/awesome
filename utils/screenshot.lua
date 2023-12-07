@@ -10,20 +10,20 @@ local function notify(_, _, _, exit_code)
 
     naughty.notify({
         title = 'Screenshot',
-        text = vars.screenshot_notify_text,
+        text = vars.screenshot.notify_text,
     })
 end
 
 local function screenshot()
-    awful.spawn.easy_async(vars.screenshot_cmd, notify)
+    awful.spawn.easy_async(vars.screenshot.regular_cmd, notify)
 end
 
 local function screenshot_focused()
-    awful.spawn.easy_async(vars.screenshot_focused_cmd, notify)
+    awful.spawn.easy_async(vars.screenshot.focused_cmd, notify)
 end
 
 local function screenshot_select()
-    awful.spawn.easy_async(vars.screenshot_select_cmd, notify)
+    awful.spawn.easy_async(vars.screenshot.select_cmd, notify)
 end
 
 return {

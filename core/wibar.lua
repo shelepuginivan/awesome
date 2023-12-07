@@ -5,7 +5,7 @@ local wibox = require('wibox')
 local wibar = require('theme.wibar')
 local wallpaper = require('theme.wallpaper')
 
-local battery_cmd = require('core.variables').battery_cmd
+local battery_cmd = require('core.variables').battery.widget_cmd
 
 local volume = require('utils.volume')
 

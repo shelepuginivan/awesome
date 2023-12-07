@@ -20,8 +20,8 @@ require('core.error_handling')
 -- User variables
 local vars = require('core.variables')
 
-local config_dir = vars.config_dir
-local terminal = vars.terminal
+local config_dir = vars.general.config_dir
+local terminal = vars.general.terminal
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.

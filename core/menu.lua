@@ -8,8 +8,8 @@ local has_fdo, freedesktop = pcall(require, 'freedesktop')
 
 local vars = require('core.variables')
 
-local terminal = vars.terminal
-local editor = vars.editor
+local terminal = vars.general.terminal
+local editor = vars.general.editor
 local editor_cmd = terminal .. ' -e ' .. editor
 
 -- Create a launcher widget and a main menu

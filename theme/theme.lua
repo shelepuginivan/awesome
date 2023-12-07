@@ -5,11 +5,11 @@ local dpi = xresources.apply_dpi
 local colorschemes = require('theme.colorschemes')
 local vars = require('core.variables')
 
-local assets_path = vars.assets_dir
+local assets_path = vars.theme.assets_dir
 
 local theme = {}
 
-theme.font = vars.font
+theme.font = vars.theme.font
 
 theme.bg_normal = colorschemes.gruvbox.bg0
 theme.bg_focus = colorschemes.gruvbox.bg1
@@ -93,7 +93,7 @@ theme.titlebar_maximized_button_focus_inactive = assets_path .. 'titlebar/maximi
 theme.titlebar_maximized_button_normal_active = assets_path .. 'titlebar/maximized_normal_active.png'
 theme.titlebar_maximized_button_focus_active = assets_path .. 'titlebar/maximized_focus_active.png'
 
-theme.wallpaper = vars.wallpapers_dir .. vars.wallpaper
+theme.wallpaper = vars.theme.wallpapers_dir .. vars.theme.wallpaper
 
 -- You can use your own layout icons like this:
 theme.layout_fairh = assets_path .. 'layouts/fairhw.png'

@@ -8,9 +8,10 @@ local menu = require('core.menu')
 
 local vars = require('core.variables')
 
-local terminal = vars.terminal
+local terminal = vars.general.terminal
 
 local brightness = require('utils.brightness')
+local lockscreen = require('utils.lockscreen')
 local screenshot = require('utils.screenshot')
 local volume = require('utils.volume')
 
@@ -151,9 +152,7 @@ local globalkeys = gears.table.join(
     ),
 
     -- Screen lock
-    awful.key({}, keys.F9, function()
-        awful.spawn(vars.screen_lock_cmd)
-    end, { description = 'lock screen', group = 'launcher' })
+    awful.key({}, keys.F9, lockscreen.cmd, { description = 'lock screen', group = 'launcher' })
 )
 
 -- Bind all key numbers to tags.
