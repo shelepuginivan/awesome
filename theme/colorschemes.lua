@@ -1,35 +1,35 @@
 local default = {
-    bg0 = '#222222',
-    bg1 = '#535d6c',
-    bg2 = '#444444',
-    fg0 = '#ffffff',
-    fg1 = '#aaaaaa',
-    red = '#ff0000',
-    dark_red = '#91231c',
+    bg_normal = '#222222',
+    bg_focus = '#535d6c',
+    bg_urgent = '#ff0000',
+    bg_minimize = '#444444',
+    bg_systray = '#222222',
+
+    fg_normal = '#aaaaaa',
+    fg_focus = '#ffffff',
+    fg_urgent = '#ffffff',
+    fg_minimize = '#ffffff',
+
+    border_normal = '#535d6c',
+    border_focus = '#444444',
+    border_marked = '#91231c',
 }
 
 local gruvbox = {
-    bg0 = '#282828',
-    bg1 = '#3c3836',
-    bg2 = '#504945',
-    fg0 = '#fbf1c7',
-    fg1 = '#ebdbb2',
-    red = '#fb4934',
-    dark_red = '#cc241d',
-    green = '#b8bb26',
-    dark_green = '#98971a',
-    yellow = '#fabd2f',
-    dark_yellow = '#d79921',
-    orange = '#fe8019',
-    dark_orange = '#d65d0e',
-    blue = '#83a598',
-    dark_blue = '#458588',
-    purple = '#d3869b',
-    dark_purple = '#b16286',
-    aqua = '#8ec07c',
-    dark_aqua = '#689d6a',
-    gray = '#a89984',
-    dark_gray = '#928374',
+    bg_normal = '#282828',
+    bg_focus = '#3c3836',
+    bg_urgent = '#cc241d',
+    bg_minimize = '#504945',
+    bg_systray = '#282828',
+
+    fg_normal = '#ebdbb2',
+    fg_focus = '#fbf1c7',
+    fg_urgent = '#fbf1c7',
+    fg_minimize = '#fbf1c7',
+
+    border_normal = '#a89984',
+    border_focus = '#928374',
+    border_marked = '#cc241d',
 }
 
 return {

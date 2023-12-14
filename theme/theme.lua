@@ -11,20 +11,20 @@ local theme = {}
 
 theme.font = vars.theme.font
 
-theme.bg_normal = colorschemes.gruvbox.bg0
-theme.bg_focus = colorschemes.gruvbox.bg1
-theme.bg_urgent = colorschemes.gruvbox.dark_red
-theme.bg_minimize = colorschemes.gruvbox.bg2
-theme.bg_systray = theme.bg_normal
+theme.bg_normal = colorschemes.gruvbox.bg_normal
+theme.bg_focus = colorschemes.gruvbox.bg_focus
+theme.bg_urgent = colorschemes.gruvbox.bg_urgent
+theme.bg_minimize = colorschemes.gruvbox.bg_minimize
+theme.bg_systray = colorschemes.gruvbox.bg_systray
 
-theme.fg_normal = colorschemes.gruvbox.fg1
-theme.fg_focus = colorschemes.gruvbox.fg0
-theme.fg_urgent = colorschemes.gruvbox.fg0
-theme.fg_minimize = colorschemes.gruvbox.fg0
+theme.fg_normal = colorschemes.gruvbox.fg_normal
+theme.fg_focus = colorschemes.gruvbox.fg_focus
+theme.fg_urgent = colorschemes.gruvbox.fg_urgent
+theme.fg_minimize = colorschemes.gruvbox.fg_minimize
 
-theme.border_normal = colorschemes.gruvbox.gray
-theme.border_focus = colorschemes.gruvbox.dark_gray
-theme.border_marked = colorschemes.gruvbox.dark_red
+theme.border_normal = colorschemes.gruvbox.border_normal
+theme.border_focus = colorschemes.gruvbox.border_focus
+theme.border_marked = colorschemes.gruvbox.border_marked
 
 theme.useless_gap = dpi(6)
 theme.gap_single_client = true
