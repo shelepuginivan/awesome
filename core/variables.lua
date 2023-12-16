@@ -44,6 +44,10 @@ return {
         max_value = 10,
     },
 
+    launcher = {
+        cmd = 'rofi -show drun',
+    },
+
     lockscreen = {
         cmd = 'betterlockscreen -l --show-layout',
     },
