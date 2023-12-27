@@ -37,11 +37,8 @@ return {
     },
 
     brightness = {
-        lower_cmd = 'xbacklight -dec 1',
-        raise_cmd = 'xbacklight -inc 1',
-        get_cmd = 'xbacklight -get',
-        min_value = 1,
-        max_value = 10,
+        lower_cmd = 'changebrightness dec',
+        raise_cmd = 'changebrightness inc',
     },
 
     launcher = {
