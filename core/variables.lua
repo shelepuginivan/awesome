@@ -27,6 +27,10 @@ return {
     theme = {
         assets_dir = config_dir .. 'assets/',
         font = 'JetBrainsMono Nerd Font Mono 8',
+
+        -- Define the icon theme for application icons. If not set then the icons
+        -- from /usr/share/icons and /usr/share/icons/hicolor will be used.
+        icons = 'Papirus',
         wallpapers_dir = config_dir .. 'wallpapers/',
         wallpaper = 'awesome.png',
     },
