@@ -10,7 +10,6 @@ local vars = require('core.variables')
 
 local terminal = vars.general.terminal
 
-local lockscreen = require('utils.lockscreen')
 local volume = require('utils.volume')
 
 local globalkeys = gears.table.join(
@@ -117,10 +116,7 @@ local globalkeys = gears.table.join(
     -- Volume controls
     awful.key({}, 'XF86AudioLowerVolume', volume.cmd.lower, { description = 'lower audio volume', group = 'launcher' }),
     awful.key({}, 'XF86AudioRaiseVolume', volume.cmd.raise, { description = 'raise audio volume', group = 'launcher' }),
-    awful.key({}, 'XF86AudioMute', volume.cmd.toggle, { description = 'mute audio device', group = 'launcher' }),
-
-    -- Screen lock
-    awful.key({}, keys.F9, lockscreen.cmd, { description = 'lock screen', group = 'launcher' })
+    awful.key({}, 'XF86AudioMute', volume.cmd.toggle, { description = 'mute audio device', group = 'launcher' })
 )
 
 -- Bind all key numbers to tags.
