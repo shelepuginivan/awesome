@@ -15,3 +15,5 @@ setxkbmap -layout "us,ru" -option "grp:alt_shift_toggle"
 setxkbmap -option ctrl:nocaps
 
 run sxhkd
+run blueman-applet
+run nm-applet
