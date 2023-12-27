@@ -10,7 +10,6 @@ local vars = require('core.variables')
 
 local terminal = vars.general.terminal
 
-local launcher = require('utils.launcher')
 local lockscreen = require('utils.lockscreen')
 local screenshot = require('utils.screenshot')
 local volume = require('utils.volume')
@@ -110,8 +109,6 @@ local globalkeys = gears.table.join(
             history_path = awful.util.get_cache_dir() .. '/history_eval',
         })
     end, { description = 'lua execute prompt', group = 'awesome' }),
-
-    awful.key({ keys.CTRL }, 'space', launcher.cmd, { description = 'open launcher', group = 'launcher' }),
 
     -- Menubar
     awful.key({ keys.MODKEY }, 'p', function()

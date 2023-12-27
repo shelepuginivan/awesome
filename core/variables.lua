@@ -40,10 +40,6 @@ return {
         widget_cmd = 'bash -c "acpi -b | awk \'{gsub(/,/, \\"\\", $4); print \\"󱐋 \\" $4}\'"',
     },
 
-    launcher = {
-        cmd = 'rofi -show drun',
-    },
-
     lockscreen = {
         cmd = 'betterlockscreen -l --show-layout',
     },
