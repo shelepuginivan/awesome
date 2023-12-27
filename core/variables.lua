@@ -40,11 +40,6 @@ return {
         widget_cmd = 'bash -c "acpi -b | awk \'{gsub(/,/, \\"\\", $4); print \\"󱐋 \\" $4}\'"',
     },
 
-    brightness = {
-        lower_cmd = 'changebrightness dec',
-        raise_cmd = 'changebrightness inc',
-    },
-
     launcher = {
         cmd = 'rofi -show drun',
     },

@@ -10,7 +10,6 @@ local vars = require('core.variables')
 
 local terminal = vars.general.terminal
 
-local brightness = require('utils.brightness')
 local launcher = require('utils.launcher')
 local lockscreen = require('utils.lockscreen')
 local screenshot = require('utils.screenshot')
@@ -140,20 +139,6 @@ local globalkeys = gears.table.join(
     awful.key({}, 'XF86AudioLowerVolume', volume.cmd.lower, { description = 'lower audio volume', group = 'launcher' }),
     awful.key({}, 'XF86AudioRaiseVolume', volume.cmd.raise, { description = 'raise audio volume', group = 'launcher' }),
     awful.key({}, 'XF86AudioMute', volume.cmd.toggle, { description = 'mute audio device', group = 'launcher' }),
-
-    -- Brightness controls
-    awful.key(
-        {},
-        'XF86MonBrightnessDown',
-        brightness.cmd.lower,
-        { description = 'lower display brightness', group = 'launcher' }
-    ),
-    awful.key(
-        {},
-        'XF86MonBrightnessUp',
-        brightness.cmd.raise,
-        { description = 'raise display brightness', group = 'launcher' }
-    ),
 
     -- Screen lock
     awful.key({}, keys.F9, lockscreen.cmd, { description = 'lock screen', group = 'launcher' })
