@@ -2,15 +2,14 @@ local gtable = require('gears.table')
 local theme_assets = require('beautiful.theme_assets')
 local xresources = require('beautiful.xresources')
 
-local colorschemes = require('theme.colorschemes')
 local vars = require('core.variables')
 
 local assets_path = vars.theme.assets_dir
 local dpi = xresources.apply_dpi
 local theme = {}
 
-gtable.crush(theme, colorschemes.default)
-gtable.crush(theme, colorschemes.gruvbox)
+gtable.crush(theme, require('theme.colorschemes.default'))
+gtable.crush(theme, require('theme.colorschemes.gruvbox'))
 
 theme.font = vars.theme.font
 theme.useless_gap = dpi(6)
