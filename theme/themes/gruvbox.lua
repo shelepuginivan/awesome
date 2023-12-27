@@ -13,4 +13,8 @@ return {
     border_normal = '#a89984',
     border_focus = '#928374',
     border_marked = '#cc241d',
+
+    font = 'JetBrainsMono Nerd Font Mono 8',
+    icon_theme = 'Papirus',
+    wallpaper = 'flandre.png',
 }

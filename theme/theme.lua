@@ -8,26 +8,15 @@ local assets_path = vars.theme.assets_dir
 local dpi = xresources.apply_dpi
 local theme = {}
 
-gtable.crush(theme, require('theme.colorschemes.default'))
-gtable.crush(theme, require('theme.colorschemes.gruvbox'))
-
-theme.font = vars.theme.font
 theme.useless_gap = dpi(6)
 theme.gap_single_client = true
 theme.border_width = dpi(1)
 
--- There are other variable sets
--- overriding the default one when
--- defined, the sets are:
--- taglist_[bg|fg]_[focus|urgent|occupied|empty|volatile]
--- tasklist_[bg|fg]_[focus|urgent]
--- titlebar_[bg|fg]_[normal|focus]
--- tooltip_[font|opacity|fg_color|bg_color|border_width|border_color]
--- mouse_finder_[color|timeout|animate_timeout|radius|factor]
--- prompt_[fg|bg|fg_cursor|bg_cursor|font]
--- hotkeys_[bg|fg|border_width|border_color|shape|opacity|modifiers_fg|label_bg|label_fg|group_margin|font|description_font]
--- Example:
---theme.taglist_bg_focus = "#ff0000"
+gtable.crush(theme, require('theme.themes.default'))
+gtable.crush(theme, require('theme.themes.gruvbox'))
+
+-- Use wallpaper from wallpapers directory
+theme.wallpaper = vars.theme.wallpapers_dir .. theme.wallpaper
 
 -- Generate taglist squares:
 local taglist_square_size = dpi(4)
@@ -79,8 +68,6 @@ theme.titlebar_maximized_button_focus_inactive = assets_path .. 'titlebar/maximi
 theme.titlebar_maximized_button_normal_active = assets_path .. 'titlebar/maximized_normal_active.png'
 theme.titlebar_maximized_button_focus_active = assets_path .. 'titlebar/maximized_focus_active.png'
 
-theme.wallpaper = vars.theme.wallpapers_dir .. vars.theme.wallpaper
-
 -- You can use your own layout icons like this:
 theme.layout_fairh = assets_path .. 'layouts/fairhw.png'
 theme.layout_fairv = assets_path .. 'layouts/fairvw.png'
@@ -101,7 +88,6 @@ theme.layout_cornerse = assets_path .. 'layouts/cornersew.png'
 
 -- Generate Awesome icon:
 theme.awesome_icon = theme_assets.awesome_icon(theme.menu_height, theme.bg_focus, theme.fg_focus)
-theme.icon_theme = vars.theme.icons
 
 return theme
 
