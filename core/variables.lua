@@ -1,9 +1,6 @@
 local home = os.getenv('HOME')
 local config_dir = home .. '/.config/awesome/'
 
-local screenshot_name = '%Y-%m-%d_%H-%M-%S.png'
-local screenshots_path = home .. '/Images/Screenshots'
-
 return {
     general = {
         -- awesomewm configuration directory
@@ -42,13 +39,6 @@ return {
 
     lockscreen = {
         cmd = 'betterlockscreen -l --show-layout',
-    },
-
-    screenshot = {
-        regular_cmd = 'scrot ' .. screenshot_name .. " -e 'mv $f " .. screenshots_path .. "'",
-        focused_cmd = 'scrot -u ' .. screenshot_name .. " -e 'mv $f " .. screenshots_path .. "'",
-        select_cmd = 'scrot -s ' .. screenshot_name .. " -e 'mv $f " .. screenshots_path .. "'",
-        notify_text = 'Screenshot saved in ' .. screenshots_path,
     },
 
     volume = {
