@@ -30,16 +30,4 @@ return {
         -- Battery widget command
         widget_cmd = 'bash -c "acpi -b | awk \'{gsub(/,/, \\"\\", $4); print \\"󱐋 \\" $4}\'"',
     },
-
-    lockscreen = {
-        cmd = 'betterlockscreen -l --show-layout',
-    },
-
-    volume = {
-        -- Volume control
-        lower_cmd = 'amixer -q -D pulse sset Master 5%-',
-        raise_cmd = 'amixer -q -D pulse sset Master 5%+',
-        toggle_cmd = 'amixer -D pulse set Master 1+ toggle',
-        widget_cmd = 'bash -c "amixer -D pulse sget Master | egrep -o -m 1 \\"\\[[0-9]+%\\] \\[(on|off)\\]\\" | awk \'{gsub(/[][]/, \\"\\"); gsub(/on/, \\"󰕾\\"); gsub(/off/, \\"󰝟\\"); print \\$2 \\"  \\" \\$1}\'"',
-    },
 }

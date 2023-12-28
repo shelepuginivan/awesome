@@ -7,8 +7,6 @@ local wallpaper = require('theme.wallpaper')
 
 local battery_cmd = require('core.variables').battery.widget_cmd
 
-local volume = require('utils.volume')
-
 local function on_connect(s)
     -- Wallpaper
     wallpaper.set(s)
@@ -65,8 +63,6 @@ local function on_connect(s)
         s.mytasklist, -- Middle widget
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
-            wibox.widget.textbox(' | '),
-            volume.widget,
             wibox.widget.textbox(' | '),
             awful.widget.watch(battery_cmd, 60),
             wibox.widget.textbox(' | '),
