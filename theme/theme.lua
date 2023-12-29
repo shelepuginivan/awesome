@@ -1,4 +1,5 @@
 local gtable = require('gears.table')
+local naughty = require('naughty')
 local theme_assets = require('beautiful.theme_assets')
 local xresources = require('beautiful.xresources')
 
@@ -24,6 +25,8 @@ theme.taglist_squares_sel = theme_assets.taglist_squares_sel(taglist_square_size
 theme.taglist_squares_unsel = theme_assets.taglist_squares_unsel(taglist_square_size, theme.fg_normal)
 
 -- Variables set for theming notifications:
+naughty.config.presets.critical.fg = theme.fg_urgent
+naughty.config.presets.critical.bg = theme.bg_urgent
 -- notification_font
 -- notification_[bg|fg]
 -- notification_[width|height|margin]
