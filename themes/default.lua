@@ -36,4 +36,6 @@ return {
     -- Put wallpapers in wallpapers_dir specified in core/variables.lua.
     -- Use relative path to that directory.
     wallpaper = 'awesome.png',
+
+    notification_opacity = 1,
 }
