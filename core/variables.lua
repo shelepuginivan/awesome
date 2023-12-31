@@ -23,7 +23,7 @@ return {
     -- Theme variables
     theme = {
         assets_dir = config_dir .. 'assets/',
-        wallpapers_dir = config_dir .. 'wallpapers/',
+        wallpapers_dir = home .. '/Images/Wallpapers/',
     },
 
     battery = {
