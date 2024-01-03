@@ -7,7 +7,7 @@
 [View source](https://github.com/shelepuginivan/awesome/blob/main/install.sh)
 
 ```shell
-sh -c $(curl -fsSL https://raw.githubusercontent.com/shelepuginivan/awesome/main/install.sh)
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/shelepuginivan/awesome/main/install.sh)"
 ```
 
 #### Manual installation
