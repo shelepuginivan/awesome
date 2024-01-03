@@ -14,7 +14,7 @@ theme.gap_single_client = true
 theme.border_width = dpi(1)
 
 gtable.crush(theme, require('themes.default'))
-gtable.crush(theme, require('themes.gruvbox'))
+gtable.crush(theme, require('themes.theme'))
 
 -- Use wallpaper from wallpapers directory
 theme.wallpaper = vars.theme.wallpapers_dir .. theme.wallpaper
