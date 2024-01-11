@@ -19,8 +19,8 @@ local function on_connect(s)
     s.mypromptbox = awful.widget.prompt()
     -- Create an imagebox widget which will contain an icon indicating which layout we're using.
     -- We need one layoutbox per screen.
-    s.mylayoutbox = awful.widget.layoutbox(s)
-    s.mylayoutbox:buttons(gears.table.join(
+    local layoutbox = awful.widget.layoutbox(s)
+    layoutbox:buttons(gears.table.join(
         awful.button({}, 1, function()
             awful.layout.inc(1)
         end),
@@ -34,15 +34,16 @@ local function on_connect(s)
             awful.layout.inc(-1)
         end)
     ))
+
     -- Create a taglist widget
-    s.mytaglist = awful.widget.taglist({
+    local taglist = awful.widget.taglist({
         screen = s,
         filter = awful.widget.taglist.filter.all,
         buttons = wibar.buttons.taglist,
     })
 
     -- Create a tasklist widget
-    s.mytasklist = awful.widget.tasklist({
+    local tasklist = awful.widget.tasklist({
         screen = s,
         filter = awful.widget.tasklist.filter.currenttags,
         buttons = wibar.buttons.tasklist,
@@ -69,11 +70,11 @@ local function on_connect(s)
         layout = wibox.layout.align.horizontal,
         { -- Left widgets
             layout = wibox.layout.fixed.horizontal,
-            s.mytaglist,
+            taglist,
             wibox.widget.textbox(' | '),
             s.mypromptbox,
         },
-        s.mytasklist, -- Middle widget
+        tasklist, -- Middle widget
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
             wibox.widget.textbox(' | '),
@@ -84,7 +85,7 @@ local function on_connect(s)
             wibox.widget.systray(),
             wibox.widget.textbox(' | '),
             textclock,
-            s.mylayoutbox,
+            layoutbox,
         },
     })
 end
