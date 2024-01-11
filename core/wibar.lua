@@ -48,6 +48,19 @@ local function on_connect(s)
         buttons = wibar.buttons.tasklist,
     })
 
+    -- Textclock widget with calendar popup
+    local textclock = wibox.widget.textclock()
+    local month_calendar = awful.widget.calendar_popup.month({
+        opacity = 0.9,
+        style_normal = {
+            border_width = 0,
+        },
+        style_weekday = {
+            border_width = 0,
+        },
+    })
+    month_calendar:attach(textclock, 'tr', { on_hover = false })
+
     -- Create the wibox
     s.mywibox = awful.wibar({ position = 'top', screen = s })
 
@@ -70,7 +83,7 @@ local function on_connect(s)
             wibox.widget.textbox(' | '),
             wibox.widget.systray(),
             wibox.widget.textbox(' | '),
-            wibox.widget.textclock(),
+            textclock,
             s.mylayoutbox,
         },
     })
