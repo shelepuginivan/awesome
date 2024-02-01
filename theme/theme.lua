@@ -9,28 +9,12 @@ local assets_path = vars.theme.assets_dir
 local dpi = xresources.apply_dpi
 local theme = {}
 
+-- Add gaps between clients
 theme.useless_gap = dpi(6)
 theme.gap_single_client = true
+
+-- Add client border
 theme.border_width = dpi(1)
-
-gtable.crush(theme, require('themes.default'))
-gtable.crush(theme, require('themes.theme'))
-
--- Use wallpaper from wallpapers directory
-theme.wallpaper = vars.theme.wallpapers_dir .. theme.wallpaper
-
--- Generate taglist squares:
-local taglist_square_size = dpi(4)
-theme.taglist_squares_sel = theme_assets.taglist_squares_sel(taglist_square_size, theme.fg_normal)
-theme.taglist_squares_unsel = theme_assets.taglist_squares_unsel(taglist_square_size, theme.fg_normal)
-
--- Variables set for theming notifications:
-naughty.config.presets.critical.fg = theme.fg_urgent
-naughty.config.presets.critical.bg = theme.bg_urgent
--- notification_font
--- notification_[bg|fg]
--- notification_[width|height|margin]
--- notification_[border_color|border_width|shape|opacity]
 
 -- Variables set for theming the menu:
 -- menu_[bg|fg]_[normal|focus]
@@ -91,6 +75,26 @@ theme.layout_cornerse = assets_path .. 'layouts/cornersew.png'
 
 -- Generate Awesome icon:
 theme.awesome_icon = theme_assets.awesome_icon(theme.menu_height, theme.bg_focus, theme.fg_focus)
+
+-- Override theme with the custom one
+gtable.crush(theme, require('themes.default'))
+gtable.crush(theme, require('themes.theme'))
+
+-- Generate taglist squares:
+local taglist_square_size = dpi(4)
+theme.taglist_squares_sel = theme_assets.taglist_squares_sel(taglist_square_size, theme.fg_normal)
+theme.taglist_squares_unsel = theme_assets.taglist_squares_unsel(taglist_square_size, theme.fg_normal)
+
+-- Variables set for theming notifications:
+naughty.config.presets.critical.fg = theme.fg_urgent
+naughty.config.presets.critical.bg = theme.bg_urgent
+-- notification_font
+-- notification_[bg|fg]
+-- notification_[width|height|margin]
+-- notification_[border_color|border_width|shape|opacity]
+
+-- Use wallpaper from wallpapers directory
+theme.wallpaper = vars.theme.wallpapers_dir .. theme.wallpaper
 
 return theme
 
