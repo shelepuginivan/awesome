@@ -15,6 +15,8 @@ local function on_connect(s)
     local names = { 'term', 'www', 'media', 'social', 'utils' }
     awful.tag(names, s, awful.layout.layouts[1])
 
+    -- Create a promptbox for each screen
+    s.mypromptbox = awful.widget.prompt()
     -- Create an imagebox widget which will contain an icon indicating which layout we're using.
     -- We need one layoutbox per screen.
     local layoutbox = awful.widget.layoutbox(s)
@@ -70,6 +72,7 @@ local function on_connect(s)
             layout = wibox.layout.fixed.horizontal,
             taglist,
             wibox.widget.textbox(' | '),
+            s.mypromptbox,
         },
         tasklist, -- Middle widget
         { -- Right widgets
