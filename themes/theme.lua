@@ -16,7 +16,7 @@ return {
 
     font = 'JetBrainsMono Nerd Font Mono 8',
     icon_theme = 'Papirus',
-    wallpaper = 'flandre.png',
+    wallpaper = 'wall.png',
 
     notification_opacity = 0.9,
 }
