@@ -18,5 +18,7 @@ return {
     icon_theme = 'Papirus',
     wallpaper = 'wall.png',
 
+    wibar_opacity = 0.9,
+
     notification_opacity = 0.9,
 }
