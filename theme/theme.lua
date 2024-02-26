@@ -10,7 +10,7 @@ local dpi = xresources.apply_dpi
 local theme = {}
 
 -- Add gaps between clients
-theme.useless_gap = dpi(6)
+theme.useless_gap = dpi(4)
 theme.gap_single_client = true
 
 -- Add client border
