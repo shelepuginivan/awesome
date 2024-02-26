@@ -1,4 +1,9 @@
+-- Disable naughty dbus integration.
+-- This is required to use a different notification daemon.
+local _dbus = dbus
+dbus = nil
 local naughty = require('naughty')
+dbus = _dbus
 
 -- Error handling
 -- Check if awesome encountered an error during startup and fell back to

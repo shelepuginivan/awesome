@@ -11,9 +11,9 @@ run() {
 run compton
 
 # User autostart commands
+run dunst
 setxkbmap -layout "us,ru" -option "grp:alt_shift_toggle"
 setxkbmap -option ctrl:nocaps
-
 run sxhkd
 run blueman-applet
 run nm-applet
